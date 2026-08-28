@@ -1,0 +1,21 @@
+[Unit]
+Description=OMS Platform
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=oms-platform
+Group=oms-platform
+EnvironmentFile=/etc/oms-platform/oms-platform.env
+ExecStart=/usr/local/bin/oms-platform
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/oms-platform
+
+[Install]
+WantedBy=multi-user.target

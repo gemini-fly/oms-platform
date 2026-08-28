@@ -1,0 +1,27 @@
+.DS_Store
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Go build and test output
+bin/
+dist/
+release/
+coverage.out
+*.test
+
+# Frontend dependencies and build output
+/frontend/
+node_modules/
+
+# Local Codex state and database exports
+.codex/
+*.sql
+*.dump
+
+# IDE and editor metadata
+.idea/
+.vscode/
+*.swp
